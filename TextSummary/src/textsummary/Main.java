@@ -17,19 +17,24 @@ public class Main {
         int LENGTH = 9;
         
         //membaca file dan membuat object Kalimat
-        KalimatBuilder kb = new KalimatBuilder(LANGCODE, FILEPATH);
+        KalimatBuilder KalimatBuilder = new KalimatBuilder(LANGCODE, FILEPATH);
         
         //split menjadi objek kata
-       KataBuilder kab = new KataBuilder();
-       kab.getKata(LANGCODE, FILEPATH);
-       kab.removeStopWords(LANGCODE);
-       kab.doCount(kab.getObjectKataBersih());
+        KataBuilder kataBuilder = new KataBuilder();
+        kataBuilder.getKata(LANGCODE, FILEPATH);
+        kataBuilder.removeStopWords(LANGCODE);
+        kataBuilder.doCount(kataBuilder.getObjectKataBersih());
 
-       DebugClass.printInfo();
-       DebugClass.printStats();
+        DebugClass.printFreqMap();
+        DebugClass.printStats();
        
+        kataBuilder.TopKata(LENGTH);
 
+        Summarizer sumrizr = new Summarizer();
+        sumrizr.sortTokWordList();
        
+        DebugClass.printTopWords();
+        sumrizr.createSummary();
     }
     
 }

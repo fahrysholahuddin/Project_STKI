@@ -35,9 +35,44 @@ public class DebugClass {
     public static void printStats() {
 
         System.out.println("\n---------Stats---------");
-        System.out.format("%-40s %d\n", "Number of Line: ", lines.size());
-        System.out.format("%-40s %d\n", "Number of kalimat: ", KalimatObject.size());
-        System.out.format("%-40s %d\n", "Number of word: ", kataKotorObject.size());
+        System.out.format("%-40s %d\n", "Jumlah Line: ", lines.size());
+        System.out.format("%-40s %d\n", "Jumlah kalimat: ", KalimatObject.size());
+        System.out.format("%-40s %d\n", "Jumlah word: ", kataKotorObject.size());
+        System.out.format("%-40s %d\n", "Jumlah stop-word removed: ", kataKotorObject.size()-kataBersihObject.size());
+        System.out.format("%-40s %d\n", "Jumlah Kata tanpa Stop-Word: ", kataBersihObject.size());
+    }
+
+    public ArrayList<Integer> getStats(){
+        ArrayList<Integer> stats = new ArrayList<Integer>();
         
+        stats.add(lines.size());
+        stats.add(KalimatObject.size());
+        stats.add(kataKotorObject.size());
+        stats.add(kataKotorObject.size()-kataBersihObject.size());
+        stats.add(kataBersihObject.size());
+        stats.add(freqMap.size());
+        return stats;
+
+    }
+
+    public static void printFreqMap() {
+        System.out.println("\n----------Jumlah Kejadian setiap Kata dan angka-----------");
+
+        Set<Kata> keySet = freqMap.keySet();
+        Kata[] kataUnik = keySet.toArray(new Kata[keySet.size()]);
+        for (Kata string : kataUnik){
+            int frequency = freqMap.get(string);
+            System.out.printf("Kata: %-25s Kejadian %-10d ...milik kalimat %d\n", string.getKataText(), frequency, string.getMilikKalimatNo());
+            
+        }
+        System.out.println("Size of keyset is " + keySet.size());
+    }
+
+    public static void printTopWords(){
+        System.out.println("\n------------------Top word------------------");
+        for (int i = 0; i < maxKataList.size(); i++) {
+            System.out.format("'%s' merupakan Top word dengan %5d kejadian. terdapat pada kalimat %d.\n", maxKataList.get(i).getKataText(), maxKataList.get(i).getKataKejadian(), maxKataList.get(i).getMilikKalimatNo());
+           
+        }
     }
 }

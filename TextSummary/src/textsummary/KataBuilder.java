@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import javax.swing.plaf.basic.BasicTreeUI.KeyHandler;
-
 /**
  *
  * @author fahry
@@ -80,7 +78,7 @@ public class KataBuilder {
             
             if(!freqMap.containsKey(kataSaatIni)){
                 freq = Collections.frequency(list, kataSaatIni);
-                
+                freqMap.put(kataSaatIni, freq);
                 kataSaatIni.setKejadianKata(freq);
             }
         }
@@ -139,5 +137,6 @@ public class KataBuilder {
     public static ArrayList<Kata> getMaxKataList(){
         return maxKataList;
     }
-    
+
+  
 }
