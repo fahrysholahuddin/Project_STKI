@@ -1,4 +1,3 @@
-
 package textsummary;
 
 /**
@@ -24,10 +23,11 @@ public class Main {
         kataBuilder.getKata(LANGCODE, FILEPATH);
         kataBuilder.removeStopWords(LANGCODE);
         kataBuilder.doCount(kataBuilder.getObjectKataBersih());
-        
+
         DebugClass.printInfo();
         DebugClass.printFreqMap();
         DebugClass.printStats();
+        
        
         kataBuilder.TopKata(LENGTH);
 

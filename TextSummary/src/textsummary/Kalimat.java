@@ -14,10 +14,10 @@ public class Kalimat {
         this.noKalimat = nextN++;
     }
     
-    @Override
-    public String toString(){
-        return "No. " + this.noKalimat + "\t Text " + this.text;
-    }
+//    @Override
+//    public String toString(){
+//        return "No. " + this.noKalimat + "\t Text " + this.text;
+//    }
     
     public String getText(){
         return this.text;

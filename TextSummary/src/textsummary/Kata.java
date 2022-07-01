@@ -19,7 +19,7 @@ public class Kata {
     
     @Override
     public String toString(){
-        return String.format("%-20s ...milik kalimat %s", this.kataText, this.milikKalimatN);
+        return String.format("%-20s ...di kalimat %s", this.kataText, this.milikKalimatN);
     }
     
     public static ArrayList<Kata> getKataKotor(){

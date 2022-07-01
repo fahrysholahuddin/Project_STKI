@@ -15,6 +15,8 @@ public class Summarizer {
             }
         });
     }
+    
+    
 
     public void createSummary(){
         ArrayList<Kalimat > kalimat = KalimatBuilder.getKalimatObject();
@@ -22,7 +24,7 @@ public class Summarizer {
         System.out.println("\n------------------Summary-------------------");
         for (int i = 0; i < maxWordList.size(); i++) {
             int j = maxWordList.get(i).getMilikKalimatNo();
-            System.out.println(kalimat.get(i));
+            System.out.format("'%s'",kalimat.get(j).getText());
         }
 
     }

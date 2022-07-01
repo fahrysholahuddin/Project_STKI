@@ -21,7 +21,7 @@ public class DebugClass {
 
         System.out.println("\n---------Mapping Setiap Kalimat---------");
         for (int i = 0; i < KalimatObject.size(); i++) {
-            System.out.println(KalimatObject.get(i));
+            System.out.format("No : %d Kalimat : %s \n",KalimatObject.get(i).getNoKalimat(),KalimatObject.get(i).getText());
         }
 
         System.out.println("\n---------Wordlist (kotor)---------");
@@ -62,7 +62,7 @@ public class DebugClass {
         Kata[] kataUnik = keySet.toArray(new Kata[keySet.size()]);
         for (Kata string : kataUnik){
             int frequency = freqMap.get(string);
-            System.out.printf("Kata: %-25s Kejadian %-10d ...milik kalimat %d\n", string.getKataText(), frequency, string.getMilikKalimatNo());
+            System.out.printf("Kata: %-25s Kejadian %-10d ...di kalimat ke %d\n", string.getKataText(), frequency, string.getMilikKalimatNo());
             
         }
         System.out.println("Size of keyset is " + keySet.size());
