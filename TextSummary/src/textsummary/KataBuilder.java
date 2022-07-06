@@ -23,7 +23,7 @@ public class KataBuilder {
         String[] kataDalamKalimat = null;
         
         for (Kalimat kalimat : kalimatObjects){
-            if(language.equals("EN"))
+            if(language.equals("ID"))
                 kataDalamKalimat = kalimat.getText().split("([^\\w']+)");
             else
                 System.out.println("Tolong masukan code bahasa");
@@ -55,8 +55,8 @@ public class KataBuilder {
     public ArrayList<Kata> removeStopWords(String language){
         List<String> stopWords = null;
         
-        if(language.equals("EN"))
-            stopWords = FileHandler.readFile("files/stopwords-en.txt");
+        if(language.equals("ID"))
+            stopWords = FileHandler.readFile("files/stopwords-id.txt");
         else
             System.err.println("Tolong masukan code bahasa");
         

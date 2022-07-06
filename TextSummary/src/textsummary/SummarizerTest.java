@@ -18,7 +18,7 @@ import javax.swing.*;
 public class SummarizerTest extends javax.swing.JFrame {
 
     private static String FILEPATH;
-    private static String LANGCODE = "EN";
+    private static String LANGCODE = "ID";
 
     /**
      * Creates new form SummarizerTest
@@ -195,6 +195,7 @@ public class SummarizerTest extends javax.swing.JFrame {
         kataBuilder.TopKata(LENGTH);
         Summarizer sumrizr = new Summarizer();
         sumrizr.sortTokWordList();
+        
         for (int i = 0; i < maxWordList.size(); i++) {
             int j = maxWordList.get(i).getMilikKalimatNo();
             String strSums = kalimat.get(j).getText().toString();
@@ -208,6 +209,7 @@ public class SummarizerTest extends javax.swing.JFrame {
             DebugClass.printFreqMap();
             DebugClass.printStats();
             DebugClass.printTopWords();
+            sumrizr.createSummary();
         }
 
         summarizeButton.setEnabled(true);
